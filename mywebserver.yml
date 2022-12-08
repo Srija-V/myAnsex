@@ -12,7 +12,18 @@
      name: apache2
      state: restarted
     when: ansible_os_family == "Debian"
+  - name: i want to install webserver on Redhat ansible nodes
+    apt:
+     name: https
+     state: present
+    when: ansible_os_family == "Redhat"
+  - name: i want to start webserver on Redhat ansible nodes
+    service:
+     name: httpd
+     state: restarted
+    when: ansible_os_family == "Redhat"
 
   
+
 
   
