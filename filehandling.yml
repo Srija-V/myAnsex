@@ -7,4 +7,8 @@
    - name: install git
      apt:
       name : git
-      
+  
+   - name: copy file into ansible node side
+     copy:
+      src: staticfile.txt
+      dest: /home/ubuntu/mystaticfile.txt
