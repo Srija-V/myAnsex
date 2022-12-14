@@ -2,8 +2,9 @@
 - hosts: 172.31.1.212
   become: yes
   tasks:
-   - name: create a file
-     file :
-      path: /home/ubuntu/myfile.txt
-      state: touch
-     
+   - include_tasks: myfile.yml
+   
+   - name: install git
+     apt:
+      name : git
+      
